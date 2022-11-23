@@ -43,7 +43,7 @@ class FileStorage:
     def get(self, cls, id):
         """A method to retrieve one object"""
         try:
-            return self.__objects[cls + "." + id]
+            return self.__objects[cls.__name__ + "." + id]
         except KeyError:
             return None
 
