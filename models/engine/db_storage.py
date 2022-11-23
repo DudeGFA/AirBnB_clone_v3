@@ -59,7 +59,7 @@ class DBStorage:
         """A method to retrieve one object"""
         new_dict = self.all(cls)
         try:
-            return new_dict[cls + "." + id]
+            return new_dict[cls.__name__ + "." + id]
         except KeyError:
             return None
 
