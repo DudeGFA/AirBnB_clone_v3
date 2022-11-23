@@ -70,7 +70,7 @@ class DBStorage:
         """
         new_dict = self.all(cls)
         if cls is not None:
-            return len([key for key, value in new_dict if cls == value.__class__ or cls == value.__class__.__name__])
+            return len([key for key, value in new_dict.items() if cls == value.__class__ or cls == value.__class__.__name__])
         else:
             return len(new_dict.keys())
 
